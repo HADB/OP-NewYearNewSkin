@@ -1,0 +1,124 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #FFF;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.logo {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    background-image: url("../img/logo.png");
+    background-position: right;
+    background-size: 48% auto;
+    background-color: #FFF;
+}
+
+.page {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.full-page {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 50px 10px;
+    box-sizing: border-box;
+    background-size: 100% auto;
+    background-origin: content-box;
+    background-color: #FFF;
+}
+
+.bg-normal {
+    background-image: url("../img/bg-normal.jpg");
+}
+
+.bg-black {
+    background-image: url("../img/bg-black.jpg");
+}
+
+.page-1 .text {
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-size: auto 100%;
+}
+
+.text-1 {
+    top: 5%;
+    background-image: url("../img/text-1.png");
+    background-position-x: 40%;
+}
+
+.text-2 {
+    top: 14%;
+    background-image: url("../img/text-2.png");
+    background-position-x: 70%;
+}
+
+.hand {
+    top: 90px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -60px;
+    background-size: 100% 100%;
+    background-image: url("../img/hand.png");
+}
+
+.button-1 {
+    top: 130px;
+    left: 50%;
+    width: 122px;
+    height: 53px;
+    margin-left: -80px;
+    background-size: 100% 100%;
+    background-image: url("../img/button-1.png");
+}
+
+.oil-1 {
+    width: 100%;
+    height: 23px;
+    top: 10px;
+    background-size: auto 100%;
+    background-position-x: center;
+    background-image: url("../img/oil-1.png");
+}
+
+.oil-2 {
+    width: 100%;
+    height: 25px;
+    top: 10px;
+    left: -2px;
+    background-size: auto 100%;
+    background-position-x: center;
+    background-image: url("../img/oil-2.png");
+}
+
+.oil-3 {
+    width: 100%;
+    height: 45px;
+    top: 30px;
+    background-size: auto 100%;
+    background-position-x: center;
+    background-image: url("../img/oil-3.png");
+}
