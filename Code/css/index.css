@@ -252,7 +252,8 @@ div {
 /* animation */
 .scale-to-up {
     -webkit-animation: scaleToUp 1s ease-out both;
-    transform-origin: top;
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
 }
 
 @-webkit-keyframes scaleToUp {
@@ -278,7 +279,8 @@ div {
 
 .oil-drop-down-scale {
     -webkit-animation: oilDropDownScale 1.5s cubic-bezier(0, 0, .80, 0) both;
-    transform-origin: bottom;
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
 }
 
 @-webkit-keyframes oilDropDownScale {
@@ -303,11 +305,11 @@ div {
     }
 }
 
-.fade-in {
-    -webkit-animation: fadeIn 1.2s ease-out both;
+.fade-in-out {
+    -webkit-animation: fadeInOut 1.2s ease-out both;
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeInOut {
     0% {
         opacity: 0;
     }
