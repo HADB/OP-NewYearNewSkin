@@ -303,11 +303,11 @@ div {
     }
 }
 
-.fade-in {
-    -webkit-animation: fadeIn 1.2s ease-out both;
+.fade-in-out {
+    -webkit-animation: fadeInOut 1.2s ease-out both;
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeInOut {
     0% {
         opacity: 0;
     }
