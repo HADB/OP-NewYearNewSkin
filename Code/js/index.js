@@ -24,6 +24,10 @@ $(function () {
         }, 1500);
 
         setTimeout(function () {
+            $(".page-1 .bg-black").addClass("hide");
+        }, 2000);
+
+        setTimeout(function () {
             $(".page-1 .bg-white").addClass("hide");
             $(".page-1 .text-1").removeClass("hide");
             $(".page-1 .text-2").removeClass("hide");
