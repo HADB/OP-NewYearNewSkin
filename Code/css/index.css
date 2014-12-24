@@ -9,12 +9,19 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
 }
 
 div {
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+
+.hide {
+    display: none;
 }
 
 .logo {
@@ -95,6 +102,16 @@ div {
     background-image: url("../img/button-1.png");
 }
 
+.button-2 {
+    top: 340px;
+    left: 50%;
+    width: 180px;
+    height: 62px;
+    margin-left: -90px;
+    background-size: 100% 100%;
+    background-image: url("../img/button-2.png");
+}
+
 .oil-1 {
     width: 100%;
     height: 23px;
@@ -121,4 +138,203 @@ div {
     background-size: auto 100%;
     background-position-x: center;
     background-image: url("../img/oil-3.png");
+}
+
+.oil-4 {
+    width: 100%;
+    height: 31px;
+    top: 44px;
+    background-size: auto 100%;
+    background-position-x: center;
+    background-image: url("../img/oil-4.png");
+}
+
+.form {
+    top: 20px;
+    width: 280px;
+    height: 420px;
+    left: 50%;
+    margin-left: -140px;
+    background-size: 100% 100%;
+    background-image: url("../img/form.png");
+}
+
+    .form .dropdown {
+        width: 70px;
+        height: 102px;
+        left: 142px;
+        top: 250px;
+        background-size: 100% 100%;
+        background-image: url("../img/dropdown-box.png");
+    }
+
+        .form .dropdown div {
+            width: 56px;
+            height: 20px;
+            margin-left: 10px;
+            color: #773B10;
+        }
+
+        .form .dropdown .dropdown-age-1 {
+            top: 10px;
+        }
+
+        .form .dropdown .dropdown-age-2 {
+            top: 30px;
+        }
+
+        .form .dropdown .dropdown-age-3 {
+            top: 50px;
+        }
+
+        .form .dropdown .dropdown-age-4 {
+            top: 70px;
+        }
+
+    .form input {
+        position: absolute;
+        background: none;
+        border: none;
+        height: 22px;
+        width: 100px;
+        line-height: 22px;
+        vertical-align: middle;
+        left: 108px;
+        padding: 0 10px;
+        margin-top: 1px;
+        color: #773B10;
+    }
+
+    .form .name {
+        top: 150px;
+    }
+
+    .form .phone {
+        top: 190px;
+    }
+
+    .form .age {
+        top: 230px;
+    }
+
+    .form .button-submit {
+        width: 100px;
+        height: 30px;
+        left: 50%;
+        margin-left: -50px;
+        top: 336px;
+    }
+
+.page-2 .bg {
+    background-image: url("../img/2.jpg");
+}
+
+.page-2 .cards {
+    width: 100%;
+    height: 100%;
+    background-size: 50% auto;
+    background-position: center 50%;
+    background-image: url("../img/cards-2.png");
+}
+
+.page-3 .bg {
+    background-image: url("../img/3.jpg");
+}
+
+.page-3 .cards {
+    width: 100%;
+    height: 100%;
+    background-size: 50% auto;
+    background-position: center 50%;
+    background-image: url("../img/cards-3.png");
+}
+
+/* animation */
+.scale-to-up {
+    -webkit-animation: scaleToUp 1s ease-out both;
+    transform-origin: top;
+}
+
+@-webkit-keyframes scaleToUp {
+    100% {
+        -webkit-transform: scaleY(0);
+    }
+}
+
+.oil-drop-down {
+    -webkit-animation: oilDropDown 1.5s cubic-bezier(0, 0, .80, 0) both;
+}
+
+@-webkit-keyframes oilDropDown {
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(350px);
+        opacity: 0;
+    }
+}
+
+.oil-drop-down-scale {
+    -webkit-animation: oilDropDownScale 1.5s cubic-bezier(0, 0, .80, 0) both;
+    transform-origin: bottom;
+}
+
+@-webkit-keyframes oilDropDownScale {
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(350px) scaleY(0);
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    -webkit-animation: fadeOut 1s ease-out both;
+}
+
+@-webkit-keyframes fadeOut {
+    100% {
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    -webkit-animation: fadeIn 1.2s ease-out both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    -webkit-animation: blink 2s ease-out both infinite;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
