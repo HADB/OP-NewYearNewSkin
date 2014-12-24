@@ -17,11 +17,11 @@ $(function () {
         $(".page-1 .oil-4").addClass("oil-drop-down");
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("fade-out");
-        }, 1000);
+        }, 1500);
         setTimeout(function () {
             $(".page-1 .bg-white").addClass("fade-in-out");
             $(".page-1 .bg-white").removeClass("hide");
-        }, 1500);
+        }, 1800);
 
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("hide");
@@ -32,7 +32,7 @@ $(function () {
             $(".page-1 .text-1").removeClass("hide");
             $(".page-1 .text-2").removeClass("hide");
             $(".page-1 .button-2").removeClass("hide");
-        }, 2500);
+        }, 2800);
     });
 
     $(".page-1 .button-2").click(function () {
