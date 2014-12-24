@@ -304,6 +304,15 @@ div {
         opacity: 0;
     }
 }
+.fade-in {
+    -webkit-animation: fadeIn 1s ease-out both;
+}
+
+@-webkit-keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
 
 .fade-in-out {
     -webkit-animation: fadeInOut 1.2s ease-out both;

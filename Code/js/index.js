@@ -2,7 +2,19 @@ var SEG = {
     currentPage: 1,
     formData: { name: "", age: 0, phone: 0 }
 };
-
+function ShowWater(nowWaterIndex){
+   if(nowWaterIndex==6){
+   return ;
+   }
+   else{
+	setTimeout(function(){
+	$('#water-'+nowWaterIndex).addClass("fade-in");
+	$('#water-'+nowWaterIndex).removeClass("hide");
+	nowWaterIndex++;
+	ShowWater(nowWaterIndex);
+	},30*nowWaterIndex*2);
+   }
+   }
 $(function () {
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
@@ -15,6 +27,7 @@ $(function () {
         $(".page-1 .oil-2").addClass("scale-to-up");
         $(".page-1 .oil-3").addClass("oil-drop-down-scale");
         $(".page-1 .oil-4").addClass("oil-drop-down");
+		setTimeout(function (){ShowWater(1)},1500);
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("fade-out");
         }, 1500);
