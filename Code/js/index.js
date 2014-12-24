@@ -67,7 +67,7 @@ $(function () {
         //js上传数据操作，并根据返回结果进行页面展示
         SEG.formData.phone = $(".page-1 .form .phone").val();
         SEG.formData.name = $(".page-1 .form .name").val();
-        SEG.formData.age = $(".page-1 .form .age").val();
+       // SEG.formData.age = $(".page-1 .form .age").val();
         //$(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
 
         //这里发出ajax请求，并对返回的json进行判断，如果正确的话进行下面两行的操作，否则，不进行任何操作。
