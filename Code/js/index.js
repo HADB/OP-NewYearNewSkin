@@ -40,24 +40,73 @@ $(function () {
 
     $(".form .dropdown .dropdown-age-1").click(function () {
         $(".page-1 .form .age").val("18-25岁");
+		 SEG.formData.age = 1;
         $(".page-1 .form .dropdown").addClass("hide");
     });
     $(".form .dropdown .dropdown-age-2").click(function () {
         $(".page-1 .form .age").val("26-35岁");
+		SEG.formData.age = 2;
         $(".page-1 .form .dropdown").addClass("hide");
     });
     $(".form .dropdown .dropdown-age-3").click(function () {
         $(".page-1 .form .age").val("36-45岁");
+		SEG.formData.age = 3;
         $(".page-1 .form .dropdown").addClass("hide");
     });
     $(".form .dropdown .dropdown-age-4").click(function () {
         $(".page-1 .form .age").val("45岁以上");
+		SEG.formData.age = 4;
         $(".page-1 .form .dropdown").addClass("hide");
     });
     $(".form .button-submit").click(function () {
         //js上传数据操作，并根据返回结果进行页面展示
-        showPage(2);
-        //showPage(3);
+		SEG.formData.phone = $(".page-1 .form .phone").val();
+        SEG.formData.name = $(".page-1 .form .name").val();
+		SEG.formData.age=$(".page-1 .form .age").val();
+        //$(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
+
+        //这里发出ajax请求，并对返回的json进行判断，如果正确的话进行下面两行的操作，否则，不进行任何操作。
+		
+		    $.ajax({
+            "url": "../newyeartest/rexdb.php",
+           //"url":" ../rexdb.php", 
+			"type": "post",
+            "data": { 'name': SEG.formData.name, 'agerange': SEG.formData.age,'phone': SEG.formData.phone },
+            "crossDomain": true,
+            "success": function (result) {
+                m =JSON.parse(result) ;
+				if(m.resultId=="999"||m.resultId=="4"||m.resultId=="5"){
+					if(m.point==1)
+					{
+					showPage(2);
+						//$(".page-2").removeClass("hide");
+					}
+					else
+					{
+					showPage(3);
+						//$(".page-3").removeClass("hide");
+					}
+				}
+				else{
+					if(m.resultId=="1"){
+					$(".page-1 .form .name").val("");
+					$(".page-1 .form .name").attr("placeholder","姓名5个汉字或15个英文单词");
+				//alert(m.resultName);
+					}
+					else if(m.resultId=="6"){
+				 //SEG.formData.age = 1;
+				$(".page-1 .form .age").val("");
+				$(".page-1 .form .age").attr("placeholder","请选择年龄");
+					}
+				
+					else{
+					$(".page-1 .form .phone").val("");
+					$(".page-1 .form .phone").attr("placeholder","手机号码不正确");
+					}
+				}
+            }
+        })
+
     });
 });
 
