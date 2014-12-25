@@ -78,9 +78,19 @@ var mheight = document.documentElement.clientHeight || document.body.clientHeigh
     });
 
     $(".page-1 .form .age").click(function () {
-        $(".page-1 .form .dropdown").removeClass("hide");
+		if($(".page-1 .form .dropdown").hasClass("hide")){
+		$(".page-1 .form .dropdown").removeClass("hide");
+		}
+		else{
+        $(".page-1 .form .dropdown").addClass("hide");
+		}
     });
-
+	$('.page-1 .form .name').click(function(){
+		$(".page-1 .form .dropdown").addClass("hide");
+	})
+	$('.page-1 .form .phone').click(function(){
+		$(".page-1 .form .dropdown").addClass("hide");
+	})
     $(".form .dropdown .dropdown-age-1").click(function () {
         $(".page-1 .form .age").val("18-25岁");
         SEG.formData.age = 1;
@@ -101,6 +111,7 @@ var mheight = document.documentElement.clientHeight || document.body.clientHeigh
         SEG.formData.age = 4;
         $(".page-1 .form .dropdown").addClass("hide");
     });
+	 $(".page-1 .form .age").click(function(){$(this).blur();})
     $(".form .button-3").click(function () {
         //js上传数据操作，并根据返回结果进行页面展示
         SEG.formData.phone = $(".page-1 .form .phone").val();
