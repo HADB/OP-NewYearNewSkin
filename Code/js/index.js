@@ -2,34 +2,34 @@ var SEG = {
     currentPage: 1,
     formData: { name: "", age: 0, phone: 0 }
 };
-function HideWater(nowWaterIndex){
-	if(nowWaterIndex==6){
-   return ;
-   }
-   else{
-	setTimeout(function(){
-	$('#water-'+nowWaterIndex).addClass("fade-out");
-	setTimeout(function(){$('#water-'+nowWaterIndex).addClass("hide");},500);
-	//$('#water-'+nowWaterIndex).addClass("hide");
-	nowWaterIndex++;
-	HideWater(nowWaterIndex);
-	},300-nowWaterIndex*40);
-   }
+function HideWater(nowWaterIndex) {
+    if (nowWaterIndex != 6) {
+        setTimeout(function () {
+            $('#water-' + nowWaterIndex).addClass("fade-out");
+            setTimeout(function () {
+                $('#water-' + nowWaterIndex).addClass("hide");
+            }, 500);
+            nowWaterIndex++;
+            HideWater(nowWaterIndex);
+        }, 300 - nowWaterIndex * 40);
+    }
 }
-function ShowWater(nowWaterIndex){
-   if(nowWaterIndex==6){
-   setTimeout( function(){HideWater(1);},300);
-   return ;
-   }
-   else{
-	setTimeout(function(){
-	$('#water-'+nowWaterIndex).addClass("fadeIn");
-	setTimeout(function(){$('#water-'+nowWaterIndex).removeClass("hide");},1000);
-	nowWaterIndex++;
-	ShowWater(nowWaterIndex);
-	},300);
-   }
-   }
+
+function ShowWater(nowWaterIndex) {
+    setTimeout(function () {
+        if (nowWaterIndex == 6) {
+            HideWater(1);
+        }
+        else {
+            $('#water-' + nowWaterIndex).addClass("fadeIn");
+            setTimeout(function () {
+                $('#water-' + nowWaterIndex).removeClass("hide");
+            }, 1000);
+            nowWaterIndex++;
+            ShowWater(nowWaterIndex);
+        }
+    }, 300);
+}
 $(function () {
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
@@ -42,25 +42,29 @@ $(function () {
         $(".page-1 .oil-2").addClass("scale-to-up");
         $(".page-1 .oil-3").addClass("oil-drop-down-scale");
         $(".page-1 .oil-4").addClass("oil-drop-down");
-		setTimeout(function (){ShowWater(1)},400);
+        setTimeout(function () {
+            ShowWater(1);
+        }, 400);
+
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("fade-out");
         }, 1500);
+
         setTimeout(function () {
             $(".page-1 .bg-white").addClass("fade-in-out");
-            $(".page-1 .bg-wh   ite").removeClass("hide");
-        }, 1800);
+            $(".page-1 .bg-white").removeClass("hide");
+        }, 2000);
 
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("hide");
-        }, 2000);
+        }, 2200);
 
         setTimeout(function () {
             $(".page-1 .bg-white").addClass("hide");
             $(".page-1 .text-1").removeClass("hide");
             $(".page-1 .text-2").removeClass("hide");
             $(".page-1 .button-2").removeClass("hide");
-        }, 2800);
+        }, 3000);
     });
 
     $(".page-1 .button-2").click(function () {
@@ -91,11 +95,11 @@ $(function () {
         SEG.formData.age = 4;
         $(".page-1 .form .dropdown").addClass("hide");
     });
-    $(".form .button-submit").click(function () {
+    $(".form .button-3").click(function () {
         //js上传数据操作，并根据返回结果进行页面展示
         SEG.formData.phone = $(".page-1 .form .phone").val();
         SEG.formData.name = $(".page-1 .form .name").val();
-       // SEG.formData.age = $(".page-1 .form .age").val();
+        // SEG.formData.age = $(".page-1 .form .age").val();
         //$(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
 
         //这里发出ajax请求，并对返回的json进行判断，如果正确的话进行下面两行的操作，否则，不进行任何操作。
