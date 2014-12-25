@@ -34,7 +34,13 @@ $(function () {
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
     }, false);
+var mheight = document.documentElement.clientHeight || document.body.clientHeight;
 
+	if(mheight<480){
+	$('.button-3').css('top','260px');
+	$('.button-2').css('top','300px');
+	}
+	
     $(".page-1 .oil-3").click(function () {
         $(".page-1 .hand").addClass("hide");
         $(".page-1 .button-1").addClass("hide");
