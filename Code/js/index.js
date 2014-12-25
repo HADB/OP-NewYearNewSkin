@@ -2,7 +2,19 @@ var SEG = {
     currentPage: 1,
     formData: { name: "", age: 0, phone: 0 }
 };
-
+function ShowWater(nowWaterIndex){
+   if(nowWaterIndex==6){
+   return ;
+   }
+   else{
+	setTimeout(function(){
+	$('#water-'+nowWaterIndex).addClass("fade-in");
+	$('#water-'+nowWaterIndex).removeClass("hide");
+	nowWaterIndex++;
+	ShowWater(nowWaterIndex);
+	},30*nowWaterIndex*2);
+   }
+   }
 $(function () {
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
@@ -15,6 +27,7 @@ $(function () {
         $(".page-1 .oil-2").addClass("scale-to-up");
         $(".page-1 .oil-3").addClass("oil-drop-down-scale");
         $(".page-1 .oil-4").addClass("oil-drop-down");
+		setTimeout(function (){ShowWater(1)},1500);
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("fade-out");
         }, 1500);
@@ -67,7 +80,7 @@ $(function () {
         //js上传数据操作，并根据返回结果进行页面展示
         SEG.formData.phone = $(".page-1 .form .phone").val();
         SEG.formData.name = $(".page-1 .form .name").val();
-        SEG.formData.age = $(".page-1 .form .age").val();
+       // SEG.formData.age = $(".page-1 .form .age").val();
         //$(".page-6 .phone-number").html("手机号：" + SEG.formData.phone);//为了后面显示用
 
         //这里发出ajax请求，并对返回的json进行判断，如果正确的话进行下面两行的操作，否则，不进行任何操作。
