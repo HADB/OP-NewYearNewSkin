@@ -2,17 +2,32 @@ var SEG = {
     currentPage: 1,
     formData: { name: "", age: 0, phone: 0 }
 };
-function ShowWater(nowWaterIndex){
-   if(nowWaterIndex==6){
+function HideWater(nowWaterIndex){
+	if(nowWaterIndex==6){
    return ;
    }
    else{
 	setTimeout(function(){
-	$('#water-'+nowWaterIndex).addClass("fade-in");
-	$('#water-'+nowWaterIndex).removeClass("hide");
+	$('#water-'+nowWaterIndex).addClass("fade-out");
+	setTimeout(function(){$('#water-'+nowWaterIndex).addClass("hide");},500);
+	//$('#water-'+nowWaterIndex).addClass("hide");
+	nowWaterIndex++;
+	HideWater(nowWaterIndex);
+	},300-nowWaterIndex*40);
+   }
+}
+function ShowWater(nowWaterIndex){
+   if(nowWaterIndex==6){
+   setTimeout( function(){HideWater(1);},300);
+   return ;
+   }
+   else{
+	setTimeout(function(){
+	$('#water-'+nowWaterIndex).addClass("fadeIn");
+	setTimeout(function(){$('#water-'+nowWaterIndex).removeClass("hide");},1000);
 	nowWaterIndex++;
 	ShowWater(nowWaterIndex);
-	},30*nowWaterIndex*2);
+	},300);
    }
    }
 $(function () {
@@ -27,13 +42,13 @@ $(function () {
         $(".page-1 .oil-2").addClass("scale-to-up");
         $(".page-1 .oil-3").addClass("oil-drop-down-scale");
         $(".page-1 .oil-4").addClass("oil-drop-down");
-		setTimeout(function (){ShowWater(1)},1500);
+		setTimeout(function (){ShowWater(1)},400);
         setTimeout(function () {
             $(".page-1 .bg-black").addClass("fade-out");
         }, 1500);
         setTimeout(function () {
             $(".page-1 .bg-white").addClass("fade-in-out");
-            $(".page-1 .bg-white").removeClass("hide");
+            $(".page-1 .bg-wh   ite").removeClass("hide");
         }, 1800);
 
         setTimeout(function () {
