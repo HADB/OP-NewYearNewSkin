@@ -217,12 +217,14 @@ div {
         top: 230px;
     }
 
-    .form .button-submit {
-        width: 100px;
-        height: 30px;
+    .form .button-3 {
+        width: 128px;
+        height: 64px;
         left: 50%;
-        margin-left: -50px;
-        top: 336px;
+        margin-left: -64px;
+        top: 300px;
+        background-size: 100% 100%;
+        background-image: url("../img/button-3.png");
     }
 
 .page-2 .bg {
@@ -305,18 +307,18 @@ div {
     }
 }
 
-
-
 @-webkit-keyframes fadeIn {
-0% {
-opacity: 0; /*初始状态 透明度为0*/
-}
-50% {
-opacity: 0.25; /*中间状态 透明度为0*/
-}
-100% {
-opacity: 0.5; /*结尾状态 透明度为1*/
-}
+    0% {
+        opacity: 0; /*初始状态 透明度为0*/
+    }
+
+    50% {
+        opacity: 0.25; /*中间状态 透明度为0*/
+    }
+
+    100% {
+        opacity: 0.5; /*结尾状态 透明度为1*/
+    }
 }
 
 .fade-in-out {
@@ -335,6 +337,10 @@ opacity: 0.5; /*结尾状态 透明度为1*/
     100% {
         opacity: 0;
     }
+}
+
+.water {
+    opacity: .5;
 }
 
 .blink {
