@@ -40,7 +40,8 @@ var mheight = document.documentElement.clientHeight || document.body.clientHeigh
 	$('.button-3').css('top','260px');
 	$('.button-2').css('top','300px');
 	}
-	
+	var logoheight=$('.logo').height();
+	$('.logo').css('top',mheight-(logoheight)+'px');
     $(".page-1 .oil-3").click(function () {
         $(".page-1 .hand").addClass("hide");
         $(".page-1 .button-1").addClass("hide");

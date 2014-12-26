@@ -28,7 +28,8 @@ if(strlen($name) > "15" || strlen($name) == "0"){
 if(strlen($phone) == "11") 
 { 
 	//if(preg_match("/13[123569]{1}\d{8}|15[1235689]\d{8}|188\d{8}/",$phone)){
-		if(preg_match("/^1[0-9]{10}$/",$phone)){
+		//if(preg_match("/^1[0-9]{10}$/",$phone)){
+		if(preg_match("/^1[3,5,7,8]{1}[0-9]{9}$/",$phone)){
 	} 
 	else{
 	$resultObj->resultId='2';
