@@ -17,6 +17,9 @@ div {
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+	-moz-user-select: none;  
+    -webkit-user-select: none;  
+    -ms-user-select: none;  
 }
 
 
