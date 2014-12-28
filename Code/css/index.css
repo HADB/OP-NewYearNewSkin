@@ -17,9 +17,9 @@ div {
     position: absolute;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-	-moz-user-select: none;  
-    -webkit-user-select: none;  
-    -ms-user-select: none;  
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .hide {
@@ -36,6 +36,10 @@ div {
     background-position: right;
     background-size: 48% auto;
     background-color: #FFF;
+}
+
+.ipad .logo {
+    height: 100px;
 }
 
 .page {
@@ -55,6 +59,11 @@ div {
     background-size: 100% auto;
     background-origin: content-box;
     background-color: #FFF;
+}
+
+.ipad .full-page {
+    margin-top: 10px;
+    background-position-y: -250px;
 }
 
 .bg-normal {
@@ -104,6 +113,12 @@ div {
     background-image: url("../img/button-1.png");
 }
 
+.ipad .button-1 {
+    width: 244px;
+    height: 106px;
+    margin-left: -80px;
+}
+
 .button-2 {
     top: 340px;
     left: 50%;
@@ -112,6 +127,12 @@ div {
     margin-left: -90px;
     background-size: 100% 100%;
     background-image: url("../img/button-2.png");
+}
+
+.ipad .button-2 {
+    width: 360px;
+    height: 124px;
+    margin-left: -180px;
 }
 
 .oil-1 {
@@ -151,6 +172,15 @@ div {
     background-image: url("../img/oil-4.png");
 }
 
+#water {
+    margin-top: 95%;
+    width: 100%;
+}
+
+.ipad #water {
+    margin-top: 64%;
+}
+
 .form {
     top: 20px;
     width: 280px;
@@ -166,7 +196,7 @@ div {
         height: 102px;
         left: 142px;
         top: 250px;
-		z-index:999;
+        z-index: 999;
         background-size: 100% 100%;
         background-image: url("../img/dropdown-box.png");
     }
@@ -230,8 +260,82 @@ div {
         background-image: url("../img/button-3.png");
     }
 
+.ipad .form {
+    top: 80px;
+    width: 420px;
+    height: 630px;
+    margin-left: -210px;
+    font-size: 16px;
+}
+
+    .ipad .form .dropdown {
+        width: 105px;
+        height: 153px;
+        left: 212px;
+        top: 376px;
+        z-index: 999;
+    }
+
+        .ipad .form .dropdown div {
+            width: 84px;
+            height: 30px;
+            margin-left: 10px;
+            color: #773B10;
+            font-size: 16px;
+        }
+
+        .ipad .form .dropdown .dropdown-age-1 {
+            top: 10px;
+        }
+
+        .ipad .form .dropdown .dropdown-age-2 {
+            top: 45px;
+        }
+
+        .ipad .form .dropdown .dropdown-age-3 {
+            top: 80px;
+        }
+
+        .ipad .form .dropdown .dropdown-age-4 {
+            top: 115px;
+        }
+
+    .ipad .form input {
+        height: 33px;
+        width: 150px;
+        line-height: 33px;
+        vertical-align: middle;
+        left: 158px;
+        padding: 0 10px;
+        margin-top: 1px;
+        color: #773B10;
+    }
+
+    .ipad .form .name {
+        top: 225px;
+    }
+
+    .ipad .form .phone {
+        top: 285px;
+    }
+
+    .ipad .form .age {
+        top: 345px;
+    }
+
+    .ipad .form .button-3 {
+        width: 192px;
+        height: 96px;
+        margin-left: -96px;
+        top: 460px;
+    }
+
 .page-2 .bg {
     background-image: url("../img/2.jpg");
+}
+
+.ipad .page-2 .full-page, .ipad .page-3 .full-page {
+    background-position-y: -90px;
 }
 
 .page-2 .cards {
@@ -271,6 +375,10 @@ div {
     -webkit-animation: oilDropDown 1.5s cubic-bezier(0, 0, .80, 0) both;
 }
 
+.ipad .oil-drop-down {
+    -webkit-animation: iPadOilDropDown 1.5s cubic-bezier(0, 0, .80, 0) both;
+}
+
 @-webkit-keyframes oilDropDown {
     80% {
         opacity: 1;
@@ -282,11 +390,30 @@ div {
     }
 }
 
+@-webkit-keyframes iPadOilDropDown {
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateY(650px);
+        opacity: 0;
+    }
+}
+
 .oil-drop-down-scale {
     -webkit-animation: oilDropDownScale 1.5s cubic-bezier(0, 0, .80, 0) both;
     -webkit-transform-origin: bottom center;
     transform-origin: bottom center;
 }
+
+
+.ipad .oil-drop-down-scale {
+    -webkit-animation: iPadOilDropDownScale 1.5s cubic-bezier(0, 0, .80, 0) both;
+    -webkit-transform-origin: bottom center;
+    transform-origin: bottom center;
+}
+
 
 @-webkit-keyframes oilDropDownScale {
 
@@ -296,6 +423,18 @@ div {
 
     100% {
         -webkit-transform: translateY(350px) scaleY(0);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes iPadOilDropDownScale {
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(650px) scaleY(0);
         opacity: 0;
     }
 }
