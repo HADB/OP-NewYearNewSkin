@@ -34,7 +34,14 @@ $(function () {
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
     }, false);
+var mheight = document.documentElement.clientHeight || document.body.clientHeight;
 
+	if(mheight<480){
+	$('.button-3').css('top','260px');
+	$('.button-2').css('top','300px');
+	}
+	var logoheight=$('.logo').height();
+	$('.logo').css('top',mheight-(logoheight)+'px');
     $(".page-1 .oil-3").click(function () {
         $(".page-1 .hand").addClass("hide");
         $(".page-1 .button-1").addClass("hide");
@@ -72,9 +79,19 @@ $(function () {
     });
 
     $(".page-1 .form .age").click(function () {
-        $(".page-1 .form .dropdown").removeClass("hide");
+		if($(".page-1 .form .dropdown").hasClass("hide")){
+		$(".page-1 .form .dropdown").removeClass("hide");
+		}
+		else{
+        $(".page-1 .form .dropdown").addClass("hide");
+		}
     });
-
+	$('.page-1 .form .name').click(function(){
+		$(".page-1 .form .dropdown").addClass("hide");
+	})
+	$('.page-1 .form .phone').click(function(){
+		$(".page-1 .form .dropdown").addClass("hide");
+	})
     $(".form .dropdown .dropdown-age-1").click(function () {
         $(".page-1 .form .age").val("18-25岁");
         SEG.formData.age = 1;
@@ -95,6 +112,7 @@ $(function () {
         SEG.formData.age = 4;
         $(".page-1 .form .dropdown").addClass("hide");
     });
+	 $(".page-1 .form .age").click(function(){$(this).blur();})
     $(".form .button-3").click(function () {
         //js上传数据操作，并根据返回结果进行页面展示
         SEG.formData.phone = $(".page-1 .form .phone").val();

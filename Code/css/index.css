@@ -1,4 +1,4 @@
-html {
+﻿html {
     width: 100%;
     height: 100%;
 }
@@ -21,7 +21,6 @@ div {
     -webkit-user-select: none;  
     -ms-user-select: none;  
 }
-
 
 .hide {
     display: none;
@@ -167,6 +166,7 @@ div {
         height: 102px;
         left: 142px;
         top: 250px;
+		z-index:999;
         background-size: 100% 100%;
         background-image: url("../img/dropdown-box.png");
     }
@@ -238,7 +238,7 @@ div {
     width: 100%;
     height: 100%;
     background-size: 50% auto;
-    background-position: center 50%;
+    background-position: center 60%;
     background-image: url("../img/cards-2.png");
 }
 
@@ -250,7 +250,7 @@ div {
     width: 100%;
     height: 100%;
     background-size: 50% auto;
-    background-position: center 50%;
+    background-position: center 60%;
     background-image: url("../img/cards-3.png");
 }
 
