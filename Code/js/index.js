@@ -146,6 +146,7 @@ $(function () {
             "data": { 'name': SEG.formData.name, 'agerange': SEG.formData.age, 'phone': SEG.formData.phone },
             "crossDomain": true,
             "success": function (result) {
+			console.log(result);
                 m = JSON.parse(result);
                 if (m.resultId == "999" || m.resultId == "4" || m.resultId == "5") {
                     if (m.point == 1) {
@@ -169,7 +170,7 @@ $(function () {
                         $(".page-1 .form .age").attr("placeholder", "请选择年龄");
                     }
 
-                    else {
+                    else if(m.resultId=='2' || m.resultId=='3') {
                         $(".page-1 .form .phone").val("");
                         $(".page-1 .form .phone").attr("placeholder", "手机号码不正确");
                     }
