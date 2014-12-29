@@ -103,6 +103,10 @@ $(function () {
         $(".page-1 .form .dropdown").addClass("hide");
     })
     $('.page-1 .form .phone').click(function () {
+		$('.text-1').css('height',text1height+'px');
+		$('.text-2').css('height',text2height+'px');
+		$('.text-1').css('top',text1top);
+		$('.text-2').css('top',text2top);
         $(".page-1 .form .dropdown").addClass("hide");
     })
     $(".form .dropdown .dropdown-age-1").click(function () {
