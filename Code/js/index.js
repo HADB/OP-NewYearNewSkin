@@ -46,6 +46,7 @@ $(function () {
     }
     var logoheight = $('.logo').height();
     $('.logo').css('top', mheight - (logoheight) + 'px');
+	var text1height,text2height,text1top,text2top;
     $(".page-1 .oil-3").click(function () {
         $(".page-1 .hand").addClass("hide");
         $(".page-1 .button-1").addClass("hide");
@@ -79,6 +80,10 @@ $(function () {
     });
 
     $(".page-1 .button-2").click(function () {
+		 text1height=$('.text-1').height();
+		 text2height=$('.text-2').height();
+		 text1top=$('.text-1').css('top');
+		 text2top=$('.text-2').css('top');
         $(".page-1 .form").removeClass("hide");
     });
 
@@ -91,9 +96,17 @@ $(function () {
         }
     });
     $('.page-1 .form .name').click(function () {
+		$('.text-1').css('height',text1height+'px');
+		$('.text-2').css('height',text2height+'px');
+		$('.text-1').css('top',text1top);
+		$('.text-2').css('top',text2top);
         $(".page-1 .form .dropdown").addClass("hide");
     })
     $('.page-1 .form .phone').click(function () {
+		$('.text-1').css('height',text1height+'px');
+		$('.text-2').css('height',text2height+'px');
+		$('.text-1').css('top',text1top);
+		$('.text-2').css('top',text2top);
         $(".page-1 .form .dropdown").addClass("hide");
     })
     $(".form .dropdown .dropdown-age-1").click(function () {
@@ -133,6 +146,7 @@ $(function () {
             "data": { 'name': SEG.formData.name, 'agerange': SEG.formData.age, 'phone': SEG.formData.phone },
             "crossDomain": true,
             "success": function (result) {
+			console.log(result);
                 m = JSON.parse(result);
                 if (m.resultId == "999" || m.resultId == "4" || m.resultId == "5") {
                     if (m.point == 1) {
@@ -156,7 +170,7 @@ $(function () {
                         $(".page-1 .form .age").attr("placeholder", "请选择年龄");
                     }
 
-                    else {
+                    else if(m.resultId=='2' || m.resultId=='3') {
                         $(".page-1 .form .phone").val("");
                         $(".page-1 .form .phone").attr("placeholder", "手机号码不正确");
                     }

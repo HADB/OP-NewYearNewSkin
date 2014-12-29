@@ -71,7 +71,7 @@ if(mysql_num_rows($result)>0){
 }
 $result1=mysql_query("select * from users where phone='$phone' and redpacket=0"); 
 if(mysql_num_rows($result1)>0){
-		if(mysql_query("UPDATE user SET redpacket=$point WHERE phone='$phone'")){
+		if(mysql_query("UPDATE users SET redpacket=$point WHERE phone='$phone'")){
 		$resultObj->resultId='5';
 		$resultObj->resultName='该手机没中过红包';
 		$resultObj->point=$point;
@@ -80,7 +80,11 @@ if(mysql_num_rows($result1)>0){
 		echo json_encode($resultObj);
 	}
 	else{
-	
+	$resultObj->resultId='-1';
+	$resultObj->resultName='数据库操作错误！';
+	echo json_encode($resultObj);
+	//or die("Query failed : " .mysql_error());
+	die(''); 
 	}
 	
 	die(''); 
@@ -104,7 +108,7 @@ if(mysql_query("INSERT INTO users values(null,'$name','$phone',$agerange,$point,
 	}
 function InitRedPacket(){
 	$n=rand(1,100);
-	if($n<=90){
+	if($n<=30){
 	return 1;
 	}
 	else{
